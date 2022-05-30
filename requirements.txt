@@ -1,0 +1,8 @@
+Quart
+pyjwt
+aiohttp
+oauthlib
+nextcord
+cachetools
+setuptools
+Async-OAuthlib
