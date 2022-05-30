@@ -1,5 +1,5 @@
-# Quart-Discord
-[![PyPI](https://img.shields.io/pypi/v/Quart-Discord?style=for-the-badge)](https://pypi.org/project/Quart-Discord/) [![Read the Docs](https://img.shields.io/readthedocs/quart-discord?style=for-the-badge)](https://quart-discord.readthedocs.io/en/latest/) 
+# Quart-Nextcord
+[![PyPI](https://img.shields.io/pypi/v/Quart-Nextcord?style=for-the-badge)](https://pypi.org/project/Quart-Nextcord/) [![Read the Docs](https://img.shields.io/readthedocs/quart-nextcord?style=for-the-badge)](https://quart-nextcord.readthedocs.io/en/latest/) 
 
 Discord OAuth2 extension for Quart.
 
@@ -7,7 +7,7 @@ Discord OAuth2 extension for Quart.
 ### Installation
 To install current latest release you can use following command:
 ```sh
-python3 -m pip install Quart-Discord
+python3 -m pip install Quart-Nextcord
 ```
 
 
@@ -26,17 +26,17 @@ app.config["DISCORD_CLIENT_SECRET"] = ""  # Discord client secret.
 app.config["DISCORD_REDIRECT_URI"] = ""  # URL to your callback endpoint.
 app.config["DISCORD_BOT_TOKEN"] = ""  # Required to access BOT resources.
 
-discord = DiscordOAuth2Session(app)
+nextcord = DiscordOAuth2Session(app)
 
 
 @app.route("/login/")
 async def login():
-    return await discord.create_session()
+    return await nextcord.create_session()
 
 
 @app.route("/callback/")
 async def callback():
-    await discord.callback()
+    await nextcord.callback()
     return redirect(url_for(".me"))
 
 
@@ -48,7 +48,7 @@ async def redirect_unauthorized(e):
 @app.route("/me/")
 @requires_authorization
 async def me():
-    user = await discord.fetch_user()
+    user = await nextcord.fetch_user()
     return f"""
     <html>
         <head>
@@ -71,11 +71,11 @@ For an example to the working application, check [`test_app.py`](tests/test_app.
 * Quart
 * Async-OAuthlib
 * cachetools
-* discord.py
+* nextcord
 
 
 ### Documentation
 Head over to [documentation] for full API reference. 
 
 
-[documentation]: https://quart-discord.readthedocs.io/en/latest/
+[documentation]: https://quart-nextcord.readthedocs.io/en/latest/
