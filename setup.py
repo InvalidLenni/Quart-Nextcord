@@ -40,7 +40,7 @@ extra_requirements = {
 
 setup(
     name='Quart-Nextcord',
-    version="2.1.4a1",
+    version="2.1.5",
     url='https://github.com/InvalidLenni/Quart-Nextcord',
     license='MIT',
     author='InvalidLenni',
