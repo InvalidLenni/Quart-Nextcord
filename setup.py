@@ -50,8 +50,8 @@ setup(
     author='InvalidLenni',
     author_email='contact@invalidlenni.de',
     description='Discord OAuth2 extension for Quart.',
-    long_description=file: README.md
-    long_description_content_type = text/markdown; charset=UTF-8; variant=GFM,
+    long_description=file: README.rst
+    long_description_content_type = text/x-rst; charset=UTF-8; variant=GFM,
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
