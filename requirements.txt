@@ -1,8 +1,8 @@
-Quart
-pyjwt
-aiohttp
-oauthlib
-nextcord
-cachetools
-setuptools
-Async-OAuthlib
+quart==0.17.0
+pyjwt==2.4.0
+aiohttp==3.8.1
+oauthlib==3.2.0
+nextcord==2.0.0a10
+cachetools==5.2.0
+setuptools==62.3.2
+Async-OAuthlib==0.0.9
