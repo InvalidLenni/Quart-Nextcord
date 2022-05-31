@@ -129,7 +129,6 @@ class DiscordOAuth2Session(_http.DiscordOAuth2HttpClient):
 
         Override this method if you want to handle the user's session server side. If this method is overridden then,
         you must also override :py:meth:`quart_nextcord.DiscordOAuth2Session.get_authorization_token`.
-
         """
         session["DISCORD_OAUTH2_TOKEN"] = token
 

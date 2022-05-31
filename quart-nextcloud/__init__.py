@@ -7,7 +7,6 @@ from .client import DiscordOAuth2Session
 __all__ = [
     "DiscordOAuth2Session",
     "requires_authorization",
-
     "HttpException",
     "RateLimited",
     "Unauthorized",
@@ -16,3 +15,4 @@ __all__ = [
 
 
 __version__ = "2.1.5a1"
+__name__ = "Quart-Nextcord"
