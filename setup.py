@@ -15,6 +15,10 @@ def __get_version():
     with open("quart_nextcord/__init__.py") as package_init_file:
         return re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', package_init_file.read(), re.MULTILINE).group(1)
 
+from pathlib import Path 
+this_directory = Path(__file__).parent 
+long_description = (this_directory / "README.md").read_text() 
+
 
 requirements = [
     'Quart',
@@ -46,7 +50,8 @@ setup(
     author='InvalidLenni',
     author_email='contact@invalidlenni.de',
     description='Discord OAuth2 extension for Quart.',
-    long_description=__doc__,
+    long_description=long_description,
+    long_description_content_type='text/markdown
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
