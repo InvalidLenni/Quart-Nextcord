@@ -9,7 +9,10 @@ To install current latest release you can use following command:
 ```sh
 python3 -m pip install Quart-Nextcord
 ```
-
+To install the current dev version you can use followering command:
+```sh
+python3 - m pip install git+https://github.com/InvalidLenni/Quart-Nextcord/tree/dev
+```
 
 ### Basic Example
 
