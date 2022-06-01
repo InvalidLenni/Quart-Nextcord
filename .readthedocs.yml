@@ -8,3 +8,5 @@ python:
   pip_install: true
   extra_requirements:
     - docs
+  requirements: 
+    docs/requirements.txt
