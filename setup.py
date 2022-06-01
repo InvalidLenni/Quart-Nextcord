@@ -41,7 +41,7 @@ extra_requirements = {
 setup(
     name='Quart-Nextcord',
     version=__get_version(),
-    url='https://github.com/jnawk/Quart-Discord',
+    url='https://github.com/InvalidLenni/Quart-InvalidLenni',
     license='MIT',
     author='InvalidLenni',
     author_email='contact@invalidlenni.de',
