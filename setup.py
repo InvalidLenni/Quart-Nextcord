@@ -5,7 +5,7 @@ requirements = [
      'oauthlib', 
      'Async-OAuthlib', 
      'cachetools', 
-     'nextcord, 
+     'nextcord', 
  ]
 
 on_rtd = os.getenv('READTHEDOCS') == 'True'
