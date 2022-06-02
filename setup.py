@@ -11,7 +11,7 @@ requirements = [
 on_rtd = os.getenv('READTHEDOCS') == 'True'
 if on_rtd: 
      requirements.append('sphinxcontrib-napoleon') 
-     requirements.append('Pallets-Sphinx-Themes') 
+     requirements.append('sphinx_rtd_theme')
   
  extra_requirements = { 
      'docs': [ 
