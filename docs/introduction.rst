@@ -97,3 +97,9 @@ in exchange for fetching user's details and display them on web page.
 
     if __name__ == "__main__":
         app.run()
+
+Contents
+--------
+
+* :doc:`introduction`
+* :doc:`api`

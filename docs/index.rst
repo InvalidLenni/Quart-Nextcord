@@ -9,14 +9,13 @@ Welcome to Quart-Nextcord's documentation!
 Quart-Nextcord is an extension for Discord OAuth2 using nextcord.
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
+Contents
+--------
 
+* :doc:`introduction`
+* :doc:`api`
 
-Indices and tables
-==================
-
-* :ref:`
-* :ref:`introduction`
+Credits
+--------
+This is a maintained fork of Quart-Discord.

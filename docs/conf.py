@@ -14,6 +14,7 @@ import os
 import re
 import sys
 
+sys.setrecursionlimit(1500)
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append('../quart_nextcord/')
 

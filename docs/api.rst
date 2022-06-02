@@ -36,7 +36,7 @@ Models
     :members:
     :inherited-members:
 
-.. autoclass:: quart_nextcord.models.
+.. autoclass:: quart_nextcord.models.UserConnection
     :members:
     :inherited-members:
 
@@ -61,3 +61,10 @@ Exceptions
 
 .. autoclass:: quart_nextcord.AccessDenied
     :members:
+
+
+Contents
+--------
+
+* :doc:`introduction`
+* :doc:`api`
