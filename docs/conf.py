@@ -42,6 +42,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
+    'pallets_sphinx_themes',
 ]
 
 intersphinx_mapping = {
