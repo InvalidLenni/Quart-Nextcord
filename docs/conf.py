@@ -2,7 +2,7 @@
 #
 # This file only contains a selection of the most common options. For a full
 # list see the documentation:
-# http://www.sphinx-doc.org/en/master/config
+# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Path setup --------------------------------------------------------------
 
@@ -13,9 +13,9 @@
 import os
 import re
 import sys
+
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.append('../quart_nextcord/')
-
 
 # -- Project information -----------------------------------------------------
 
@@ -25,11 +25,8 @@ author = 'InvalidLenni'
 
 with open('../quart_nextcord/__init__.py') as f:
     ver = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE).group(1)
-# The short X.Y version
-version = ver
 # The full version, including alpha/beta/rc tags
 release = ver
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -42,12 +39,11 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
-    'sphinx_rtd_theme',
 ]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
-    'discord': ('https://discordpy.readthedocs.io/en/latest/', None),
+    'nextcord': ('https://docs.nextcord.dev/en/latest/', None),
     'quart': ('https://pgjones.gitlab.io/quart/', None),
     'cachetools': ('https://cachetools.readthedocs.io/en/stable/', None),
     'async_oauthlib': ('https://async-oauthlib.readthedocs.io/en/latest/', None)
@@ -59,8 +55,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
+exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 

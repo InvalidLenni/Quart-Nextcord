@@ -5,7 +5,7 @@
 Introduction
 ============
 
-Quart-Discord is an extension for Quart - Python web framework which
+Quart-Nextcord is an extension for Quart - Python web framework which
 makes easy implementation of Discord OAuth2 API. After creating a discord
 client object, one can easily request authorization and hence any of the
 resources provided by the discord OAuth2 API under the available scope
@@ -23,8 +23,8 @@ Requirements
 - **cachetools**
     Quart Discord supports caching discord objects to boost the performance when page loads.
 
-- **discord.py**
-    Makes use of discord.py for re-using many Discord models.
+- **nextcord**
+    Makes use of nextcord for re-using many Discord models.
 
 Installing
 ----------
@@ -32,12 +32,12 @@ Installing
 You can install Quart-Discord directly from PyPI using PIP and following command
 in shell or command prompt: ::
 
-    python3 -m pip install -U Quart-Discord
+    python3 -m pip install -U Quart-Nextcord
 
 You can also install the latest development version (**maybe unstable/broken**) by
 using following command: ::
 
-    python3 -m pip install -U git+https://github.com/jnawk/Quart-Discord.git
+    python3 -m pip install -U git+https://github.com/InvalidLenni/tree/dev
 
 
 Basic Usage
@@ -49,7 +49,7 @@ in exchange for fetching user's details and display them on web page.
 .. code-block:: python3
 
     from quart import Quart, redirect, url_for
-    from quart_discord import DiscordOAuth2Session, requires_authorization, Unauthorized
+    from quart_nextcord import DiscordOAuth2Session, requires_authorization, Unauthorized
 
     app = Quart(__name__)
 
@@ -61,17 +61,17 @@ in exchange for fetching user's details and display them on web page.
     app.config["DISCORD_BOT_TOKEN"] = ""                    # Required to access BOT resources.
 
 
-    discord = DiscordOAuth2Session(app)
+    nextauth = DiscordOAuth2Session(app)
 
 
     @app.route("/login/")
     async def login():
-        return await discord.create_session()
+        return await nextauth.create_session()
 
 
     @app.route("/callback/")
     async def callback():
-        await discord.callback()
+        await nextauth.callback()
         return redirect(url_for(".me"))
 
 
@@ -83,7 +83,7 @@ in exchange for fetching user's details and display them on web page.
     @app.route("/me/")
     @requires_authorization
     async def me():
-        user = await discord.fetch_user()
+        user = await nextauth.fetch_user()
         return f"""
         <html>
             <head>

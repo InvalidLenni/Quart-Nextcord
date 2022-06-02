@@ -8,11 +8,11 @@ attributes and available methods.
 Discord OAuth2 Client
 ---------------------
 
-.. autoclass:: quart_discord.DiscordOAuth2Session
+.. autoclass:: quart_nextcord.DiscordOAuth2Session
     :members:
     :inherited-members:
 
-.. autoclass:: quart_discord._http.DiscordOAuth2HttpClient
+.. autoclass:: quart_nextcord._http.DiscordOAuth2HttpClient
     :members:
     :inherited-members:
 
@@ -20,23 +20,23 @@ Discord OAuth2 Client
 Models
 ------
 
-.. autoclass:: quart_discord.models.Guild
+.. autoclass:: quart_nextcord.models.Guild
     :members:
     :inherited-members:
 
-.. autoclass:: quart_discord.models.User
+.. autoclass:: quart_nextcord.models.User
     :members:
     :inherited-members:
 
-.. autoclass:: quart_discord.models.Bot
+.. autoclass:: quart_nextcord.models.Bot
     :members:
     :inherited-members:
 
-.. autoclass:: quart_discord.models.Integration
+.. autoclass:: quart_nextcord.models.Integration
     :members:
     :inherited-members:
 
-.. autoclass:: quart_discord.models.UserConnection
+.. autoclass:: quart_nextcord.models.
     :members:
     :inherited-members:
 
@@ -44,20 +44,20 @@ Models
 Utilities
 ---------
 
-.. autodecorator:: quart_discord.requires_authorization
+.. autodecorator:: quart_nextcord.requires_authorization
 
 
 Exceptions
 ----------
 
-.. autoclass:: quart_discord.HttpException
+.. autoclass:: quart_nextcord.HttpException
     :members:
 
-.. autoclass:: quart_discord.RateLimited
+.. autoclass:: quart_nextcord.RateLimited
     :members:
 
-.. autoclass:: quart_discord.Unauthorized
+.. autoclass:: quart_nextcord.Unauthorized
     :members:
 
-.. autoclass:: quart_discord.AccessDenied
+.. autoclass:: quart_nextcord.AccessDenied
     :members:
