@@ -4,6 +4,7 @@ version: 2
 
 # Python stuff
 python:
+  version: "3.9"
   install:
     - requirements: docs/requirements.txt
     - requirements: requirements.txt
