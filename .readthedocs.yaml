@@ -1,0 +1,9 @@
+# RTD Config Version
+
+version: 2
+
+# Python stuff
+python:
+  install:
+    - requirements: docs/requirements.txt
+    - requirements: requirements.txt
