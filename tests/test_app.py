@@ -69,7 +69,7 @@ async def callback():
 
 @app.route("/me/")
 async def me():
-    user = await nextipc.fetch_user()
+    user = await nextquart.fetch_user()
     return f"""
 <html>
 <head>
@@ -87,20 +87,20 @@ async def me():
 
 @app.route("/me/guilds/")
 async def user_guilds():
-    guilds = await nextipc.fetch_guilds()
+    guilds = await nextquart.fetch_guilds()
     return "<br />".join([f"[ADMIN] {g.name}" if g.permissions.administrator else g.name for g in guilds])
 
 
 @app.route("/add_to/<int:guild_id>/")
 async def add_to_guild(guild_id):
-    user = await nextipc.fetch_user()
+    user = await nextquart.fetch_user()
     return await user.add_to_guild(guild_id)
 
 
 @app.route("/me/connections/")
 async def my_connections():
-    user = await nextcord.fetch_user()
-    connections = await nextcord.fetch_connections()
+    user = await nextquart.fetch_user()
+    connections = await nextquart.fetch_connections()
     return f"""
 <html>
 <head>
@@ -116,7 +116,7 @@ async def my_connections():
 
 @app.route("/logout/")
 async def logout():
-    nextcord.revoke()
+    nextquart.revoke()
     return redirect(url_for(".index"))
 
 
