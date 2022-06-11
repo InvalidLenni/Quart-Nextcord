@@ -155,7 +155,7 @@ class User(DiscordModelsBase):
         guilds: :class:`bool`
             A boolean indicating if user's guilds should be cached or not. Defaults to ``False``. If chose to not
             cache, user's guilds can always be obtained from :py:func:`quart_nextcord.Guilds.fetch_from_api()`.
-        connections : bool
+        connections: :class:`bool`
             A boolean indicating if user's connections should be cached or not. Defaults to ``False``. If chose to not
             cache, user's connections can always be obtained from :py:func:`quart_nextcord.Connections.fetch_from_api()`.
 
@@ -244,4 +244,4 @@ class User(DiscordModelsBase):
 
 class Bot(User):
     """Class representing the client user itself."""
-    # TODO: What is this?
+
