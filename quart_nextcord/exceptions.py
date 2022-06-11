@@ -1,3 +1,6 @@
+import logging
+
+
 class HttpException(Exception):
     """Base Exception class representing a HTTP exception."""
 
@@ -9,15 +12,15 @@ class RateLimited(HttpException):
 
     Attributes
     ----------
-    message : str
+    message : :attr:`str`
         A message saying you are being rate limited.
-    json : dict
+    json : :attr:`dict`
         The actual JSON data received. Shorthand to ``await response.json()``.
-    headers : dict
+    headers : :attr:`dict`
         The actual response headers received from the API.
-    retry_after : int
+    retry_after : :attr:`int`
         The number of milliseconds to wait before submitting another request.
-    is_global : bool
+    is_global : :attr:`bool`
         A value indicating if you are being globally rate limited or not
     """
 
@@ -28,6 +31,7 @@ class RateLimited(HttpException):
         self.is_global = self.json["global"]
         self.retry_after = self.json["retry_after"]
         super().__init__(self.message)
+        logging.exception(self.message)
 
 
 class Unauthorized(HttpException):
