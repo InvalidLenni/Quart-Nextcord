@@ -18,16 +18,16 @@ class DiscordOAuth2Session(_http.DiscordOAuth2HttpClient):
     ----------
     app : Quart
         An instance of your `quart application <https://pgjones.gitlab.io/quart/reference/source/quart.app.html#quart.app.Quart>`_.
-    client_id : int, optional
+    client_id : Optional[:class:`int`]
         The client ID of discord application provided. Can be also set to quart config
         with key ``DISCORD_CLIENT_ID``.
-    client_secret : str, optional
+    client_secret : Optional[:class:`str`]
         The client secret of discord application provided. Can be also set to quart config
         with key ``DISCORD_CLIENT_SECRET``.
-    redirect_uri : str, optional
+    redirect_uri : Optional[:class:`str`]
         The default URL to use to redirect user to after authorization. Can be also set to quart config
         with key ``DISCORD_REDIRECT_URI``.
-    bot_token : str, optional
+    bot_token : Optional[:class:`str`]
         The bot token of the application. This is required when you also need to access bot scope resources
         beyond the normal resources provided by the OAuth. Can be also set to quart config with
         key ``DISCORD_BOT_TOKEN``.
@@ -38,9 +38,9 @@ class DiscordOAuth2Session(_http.DiscordOAuth2HttpClient):
 
     Attributes
     ----------
-    client_id : int
+    client_id : :class:`int`
         The client ID of discord application provided.
-    redirect_uri : str
+    redirect_uri : :class:`str`
         The default URL to use to redirect user to after authorization.
     users_cache : cachetools.LFUCache
         A dict like mapping to internally cache the authorized users. Preferably an instance of
@@ -221,7 +221,7 @@ class DiscordOAuth2Session(_http.DiscordOAuth2HttpClient):
 
         Parameters
         ----------
-        use_cache : bool, optional
+        use_cache : Optional[:class:`bool`]
             can be set to False to avoid using the cache.  
 
         Returns

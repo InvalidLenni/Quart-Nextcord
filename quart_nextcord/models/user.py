@@ -23,31 +23,33 @@ class User(DiscordModelsBase):
 
     Attributes
     ----------
-    id : int
+    id: :class:`int`
         The discord ID of the user.
-    username : str
+    username: :class:`str`
         The discord username of the user.
-    discriminator : str
+    discriminator: :class:`str`
         4 length string representing discord tag of the user.
-    avatar_hash : str
+    avatar_hash: :class:`str`
         Hash of users avatar.
-    bot : bool
+    banner_hash: :class:`str`
+        Hash of the users banner.
+    bot: :class:`bool`
         A boolean representing whether the user belongs to an OAuth2 application.
-    mfa_enabled : bool
+    mfa_enabled: :class:`bool`
         A boolean representing whether the user has two factor enabled on their account.
-    locale : str
+    locale: :class:`str`
         The user's chosen language option.
-    verified : bool
+    verified: :class:`bool`
         A boolean representing whether the email on this account has been verified.
-    email : str
+    email: :class:`str`
         User's email ID.
-    flags : int
+    flags : :class:`int`
         An integer representing the
-        `user flags <https://discordapp.com/developers/docs/resources/user#user-object-user-flags>`_.
-    premium_type : int
+        `user flags <https://discord.com/developers/docs/resources/user#user-object-user-flags>`_.
+    premium_type : :class:`int`
         An integer representing the
         `type of nitro subscription <https://discordapp.com/developers/docs/resources/user#user-object-premium-types>`_.
-    connections : list
+    connections : :class:`list`
         A list of :py:class:`quart_nextcord.UserConnection` instances. These are cached and this list might be empty.
 
     """
@@ -62,6 +64,7 @@ class User(DiscordModelsBase):
         self.avatar_hash = self._payload.get("avatar", self.discriminator)
         self.bot = self._payload.get("bot", False)
         self.mfa_enabled = self._payload.get("mfa_enabled")
+        self.banner_hash = self._payload.get("banner")
         self.locale = self._payload.get("locale")
         self.verified = self._payload.get("verified")
         self.email = self._payload.get("email")
@@ -124,6 +127,24 @@ class User(DiscordModelsBase):
         except AttributeError:
             return False
 
+    @property
+    def banner_url(self):
+        """A property returning direct URL to user's banner."""
+        if not self.banner_hash:
+            return
+        image_format = configs.DISCORD_ANIMATED_IMAGE_FORMAT \
+            if self.is_banner_animated else configs.DISCORD_IMAGE_FORMAT
+        return configs.DISCORD_USER_BANNER_BASE_URL.format(
+            user_id=self.id, banner_hash=self.avatar_hash, format=image_format)
+
+    @property
+    def is_banner_animated(self):
+        """A boolean representing if banner of user is animated. Meaning user has GIF banner."""
+        try:
+            return self.banner_hash.startswith("a_")
+        except AttributeError:
+            return False
+
     @classmethod
     async def fetch_from_api(cls, guilds=False, connections=False):
         """A class method which returns an instance of this model by implicitly making an
@@ -131,10 +152,10 @@ class User(DiscordModelsBase):
 
         Parameters
         ----------
-        guilds : bool
+        guilds: :class:`bool`
             A boolean indicating if user's guilds should be cached or not. Defaults to ``False``. If chose to not
             cache, user's guilds can always be obtained from :py:func:`quart_nextcord.Guilds.fetch_from_api()`.
-        connections : bool
+        connections: :class:`bool`
             A boolean indicating if user's connections should be cached or not. Defaults to ``False``. If chose to not
             cache, user's connections can always be obtained from :py:func:`quart_nextcord.Connections.fetch_from_api()`.
 
@@ -174,7 +195,7 @@ class User(DiscordModelsBase):
 
         Parameters
         ----------
-        guild_id : int
+        guild_id : :class:`int`
             The ID of the guild you want this user to be added.
             
         Returns
@@ -223,4 +244,4 @@ class User(DiscordModelsBase):
 
 class Bot(User):
     """Class representing the client user itself."""
-    # TODO: What is this?
+

@@ -14,5 +14,6 @@ __all__ = [
 ]
 
 
-__version__ = "2.1.5a1"
+__version__ = "2.1.6a1"
 __name__ = "Quart-Nextcord"
+__release__ = "2.1.6a1"

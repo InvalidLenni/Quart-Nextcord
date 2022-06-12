@@ -27,6 +27,8 @@ class Guild(DiscordModelsBase):
         Hash of guild's icon.
     is_owner : bool
         Boolean determining if current user is owner of the guild or not.
+    owner_id: int
+        Discord ID of the guild owner.
     permissions : nextcord.Permissions
         An instance of nextcord.Permissions representing permissions of current user in the guild.
 
@@ -41,6 +43,7 @@ class Guild(DiscordModelsBase):
         self.name = self._payload["name"]
         self.icon_hash = self._payload.get("icon")
         self.is_owner = self._payload.get("owner")
+        self.owner_id = self._payload.get("owner_id")
         self.permissions = self.__get_permissions(self._payload.get("permissions"))
 
     @staticmethod
@@ -65,9 +68,10 @@ class Guild(DiscordModelsBase):
             return
         return configs.DISCORD_GUILD_ICON_BASE_URL.format(guild_id=self.id, icon_hash=self.icon_hash)
 
+
     @classmethod
     async def fetch_from_api(cls, cache=True):
-        """A class method which returns an instance or list of instances of this model by implicitly making an
+        """A class method which returns an instance or list of instances of this model by implicitly making ablm
         API call to Discord. If an instance of :py:class:`quart_nextcord.User` exists in the users internal cache
         who belongs to these guilds then, the cached property :py:attr:`quart_nextcord.User.guilds` is updated.
 
