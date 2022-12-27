@@ -4,5 +4,5 @@ aiohttp==3.8.1
 oauthlib==3.2.1
 nextcord==2.0.0a10
 cachetools==5.2.0
-setuptools==62.3.2
+setuptools==65.5.1
 Async-OAuthlib==0.0.9
