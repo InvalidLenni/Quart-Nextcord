@@ -3,6 +3,10 @@
 
 Discord OAuth2 extension for Quart.
 
+# NO SUPPORT & UPDATES
+```md
+[!] This library will not get any updates in the future. [!]
+```
 
 ### Installation
 To install current latest release you can use following command:
