@@ -8,7 +8,7 @@ Welcome to Quart-Nextcord's documentation!
 
 Quart-Nextcord is an extension for Discord OAuth2 using nextcord.
 
-# DEPRECATED
+DEPRECATED
 --------
 This repository isn't getting any updates anymore.
 
