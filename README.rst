@@ -3,6 +3,10 @@
 
 Discord OAuth2 extension for Quart.
 
+# DEPRECATED
+```md
+[!] This repository is not getting any updates anymore. [!]
+```
 
 ### Installation
 To install current latest release you can use following command:
